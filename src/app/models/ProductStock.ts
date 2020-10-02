@@ -1,4 +1,4 @@
-import { Warehouse } from './Warehouse';
+
 
 export class ProductStock{
     stockId:number;

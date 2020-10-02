@@ -1,4 +1,4 @@
-import { Warehouse } from './Warehouse';
+
 
 export class RawMaterialStock{
     stockId:number;
@@ -6,7 +6,6 @@ export class RawMaterialStock{
     pricePerUnit:number;
     quantityUnit:number;
     price:number;
-    warehouse:Warehouse;
     manufacturingDate:Date;
     expiryDate:Date;
     qualityCheck:String;

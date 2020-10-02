@@ -33,20 +33,7 @@
                       </td>
                     </tr>
           
-                    <tr>
-                      <td>
-                        <label for="warehouse-id">Warehouse Id</label>
-                      </td>
-                      <td>
-                        <select id="warehouse-id" class="form-control" [(ngModel)]="warehouse" name="wid" #wid="ngModel">
-                          <option *ngFor="let warehouse of warehouses" [ngValue]="warehouse">
-                            {{warehouse.warehouseId}}
-                          </option>
-                        </select>
-                        <span style="color:red;" class="help-block" *ngIf="!wid.valid && wid.touched">Please
-                          enter a valid ID !</span>
-                      </td>
-                    </tr>
+                  
                     <tr>
                       <td>
                         <label for="quantity-unit">Quantity Unit</label>

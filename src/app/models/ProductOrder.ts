@@ -1,5 +1,4 @@
 import { Distributor } from './Distributor';
-import { Warehouse } from './Warehouse';
 
 export class ProductOrder{
     orderId:number;

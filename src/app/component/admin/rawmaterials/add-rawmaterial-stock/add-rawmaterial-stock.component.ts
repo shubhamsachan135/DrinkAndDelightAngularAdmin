@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Warehouse } from 'src/app/models/Warehouse';
 import { RawmaterialService } from 'src/app/services/rawmaterial.service';
 import { RawMaterialStock } from 'src/app/models/RawMaterialStock';
 
@@ -12,7 +11,6 @@ import { RawMaterialStock } from 'src/app/models/RawMaterialStock';
 export class AddRawmaterialStockComponent implements OnInit {
   @ViewChild('f', { static: false }) signupForm: NgForm;
   names = ['a', 'b'];
-  warehouses:Warehouse[];
   stock: RawMaterialStock = new RawMaterialStock();
   stockId: Number;
   name: string;
