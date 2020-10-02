@@ -20,19 +20,24 @@
                           pdname.touched">Please enter a valid Name!</span>
                       </td>
                     </tr>
+                   
+          
+
                     <tr>
                       <td>
-                        <label for="distributors-id">distributors ID</label>
+                        <label for="distributor-id">Distributer</label>
                       </td>
                       <td>
-                        <select id="distributor-id" class="form-control" [(ngModel)]="distributor" name="sid" #did="ngModel">
-                          <option *ngFor="let distributor of distributors" [ngValue]="distributor">{{distributor.distributorId}}</option>
+                        <select id="distributor-id" class="form-control" [(ngModel)]="distributor" name="nid" #unit="ngModel" 
+                        required>
+                          <option *ngFor="let distributor of distributors" [ngValue]="distributor">
+                            {{distributor.distributorId}}, {{distributor.name}}</option>
                         </select>
-                        <span style="color:red;" class="help-block" *ngIf="!did.valid && did.touched">Please
-                          enter a valid ID!</span>
+                        <span style="color:red;" class="help-block" *ngIf="!unit.valid && unit.touched">Please
+                          enter a valid Unit !</span>
                       </td>
                     </tr>
-          
+
                   
                     <tr>
                       <td>
@@ -67,7 +72,7 @@
                       </td>
                     </tr>
                   </table>
-                  <button class="btn btn-primary" type="submit">Order</button>
+                  <button [disabled]="!f.valid" class="btn btn-primary" type="submit">Order</button>
                 </form>
               </div>
             </div>

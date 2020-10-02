@@ -20,11 +20,13 @@
             </tr>
             <tr>
               <td>
-                <label for="supplier-id">Supplier ID</label>
+                <label for="supplier-id">Supplier</label>
               </td>
               <td>
-                <select id="supplier-id" class="form-control" [(ngModel)]="supplier" name="sid" #sid="ngModel" required>
-                  <option *ngFor="let supplier of suppliers" [ngValue]="supplier">{{supplier.supplierId}}, {{supplier.name}}</option>
+                <select id="supplier-id" class="form-control" [(ngModel)]="supplier" name="sid" #sid="ngModel"
+                 required>
+                  <option *ngFor="let supplier of suppliers" [ngValue]="supplier">
+                    {{supplier.supplierId}}, {{supplier.name}}</option>
                 </select>
                 <span style="color:red;" class="help-block" *ngIf="!sid.valid && sid.touched">Please
                   enter a valid ID!</span>
@@ -37,7 +39,7 @@
                 <label for="quantity-unit">Quantity Unit</label>
               </td>
               <td>
-                <input type="number" id="unit" class="form-control" name="quantity-unit" [(ngModel)]="quantityUnit"
+                <input type="text" maxlength="4" id="unit" class="form-control" name="quantity-unit" [(ngModel)]="quantityUnit"
                 required pattern="^[1-9][0-9]*$" #unit="ngModel"
                   required>
                 <span style="color:red;" class="help-block" *ngIf="!unit.valid && unit.touched">Please
@@ -50,7 +52,7 @@
               </td>
               <td>
   
-                <input type="number" id="price-per-unit" class="form-control" name="price-per-unit" [(ngModel)]="pricePerUnit"
+                <input type="text" maxlength="4" id="price-per-unit" class="form-control" name="price-per-unit" [(ngModel)]="pricePerUnit"
                 required pattern="^[1-9][0-9]*$"  #price="ngModel" required>
                 <span style="color:red;" class="help-block" *ngIf="!price.valid && price.touched">Please
                   enter a valid Price !</span>

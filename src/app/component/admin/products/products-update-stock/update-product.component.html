@@ -12,9 +12,9 @@
                               <label for="stock-id">stock ID</label>
                             </td>
                             <td>
-                              <select id="stock-id" class="form-control" [(ngModel)]="stockId" name="sid" #sid="ngModel" required>
-                                <option *ngFor="let stockId of stockIds" [ngValue]="stockId">
-                                  {{stockId}}
+                              <select id="stock-id" class="form-control" [(ngModel)]="stock" name="sid" #sid="ngModel" required>
+                                <option *ngFor="let stock of productStock" [ngValue]="stock">
+                                  {{stock.stockId}}, {{stock.name}}
                                 </option>
                               </select>
                               <span style="color:red;" class="help-block" *ngIf="!sid.valid && sid.touched">Please

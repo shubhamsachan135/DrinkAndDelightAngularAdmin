@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ProductStock } from 'src/app/models/ProductStock';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -15,14 +16,18 @@ export class UpdateProductComponent implements OnInit {
   pricePerUnit:number;
   response:string;
   submitted:boolean=false;
-  stockIds:number[]
+  stockIds:number[];
+  productStock:ProductStock[]
+  stock:ProductStock
   constructor(private productService: ProductService) { 
-    this.stockIds=this.productService.getProductStockId();
+   // this.stockIds=this.productService.getProductStockId();
+   this.productStock=this.productService.getProductStock();
   }
 
   ngOnInit(): void {
   }
 onSubmit(){
+  this.stockId=this.stock.stockId;
   this.response=this.productService.updateStock(this.stockId,this.QuantityUnit,this.pricePerUnit,this.qualityCheck);
   this.submitted=true;
   this.signupForm.reset();

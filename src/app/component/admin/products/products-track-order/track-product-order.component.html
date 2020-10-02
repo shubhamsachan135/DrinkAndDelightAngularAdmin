@@ -22,7 +22,7 @@
                         </td>
                         <td>
                           <select id="orderId" class="form-control" [(ngModel)]="order" name="sid" #did="ngModel">
-                            <option *ngFor="let order of productOrders" [ngValue]="order">{{order.orderId}}</option>
+                            <option *ngFor="let order of productOrders" [ngValue]="order">{{order.orderId}}, {{order.name}}, {{order.distributor.name}}</option>
                           </select>
                           <span style="color:red;" class="help-block" *ngIf="!did.valid && did.touched">Please
                             enter a valid ID!</span>

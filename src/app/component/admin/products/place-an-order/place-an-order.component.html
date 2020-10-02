@@ -2,7 +2,7 @@
 <div id="order">
     <div class="container">
         <br>
-        <h1 >Product order</h1>
+        <h1 >Process order</h1>
         <br>
         <div class="row">
           <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
@@ -13,11 +13,11 @@
                     <label for="raw-names">Product Name</label>
                   </td>
                   <td>
-                    <select id="names" class="form-control" [(ngModel)]="name" name="name" #pdname="ngModel">
+                    <select id="names" class="form-control" [(ngModel)]="name" name="name" #pdname="ngModel" required>
                       <option *ngFor="let name of names" [value]="name">{{name}}</option>
                     </select>
                     <span style="color:red;" class="help-block" *ngIf="!pdname.valid &&
-                      pdname.touched">Please enter a valid Name!</span>
+                    pdname.touched">Please enter a valid Name!</span>
                   </td>
                 </tr>
                 <tr>
@@ -39,7 +39,7 @@
                     <label for="quantity-unit">Quantity Unit</label>
                   </td>
                   <td>
-                    <input type="text"  id="unit" class="form-control"  name="quantity-unit" [(ngModel)]="quantityUnit"
+                    <input type="text" maxlength="4" id="unit" class="form-control"  name="quantity-unit" [(ngModel)]="quantityUnit"
                     required pattern="^[1-9][0-9]*$" #unit="ngModel"
                       required>
                     <span style="color:red;" class="help-block" *ngIf="!unit.valid && unit.touched">Please
@@ -52,7 +52,7 @@
                   </td>
                   <td>
       
-                    <input type="text" id="price-per-unit" class="form-control" name="price-per-unit" [(ngModel)]="pricePerUnit"
+                    <input type="text" maxlength="4" id="price-per-unit" class="form-control" name="price-per-unit" [(ngModel)]="pricePerUnit"
                     required pattern="^[1-9][0-9]*$" #price="ngModel" required>
                     <span style="color:red;" class="help-block" *ngIf="!price.valid && price.touched">Please
                       enter a valid Price !</span>
@@ -69,7 +69,7 @@
                   </td>
                 </tr>
               </table>
-              <button class="btn btn-primary" type="submit" [disabled]="f.form.invalid">Order</button>
+              <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Order</button>
             </form>
           </div>
         </div>
